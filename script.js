@@ -49,17 +49,17 @@ document.getElementById('btn-check-chord').addEventListener('click', () => {
     if (isMatch) {
         currentChordIndex++;
         if (currentChordIndex < chordOrder.length) {
-            alert(`✨ Bagus sekali! Kunci ${targetChord} sukses. Lanjut bentuk kunci ${chordOrder[currentChordIndex]}!`);
+            alert(`✨ Bagus sekali Kunci ${targetChord} sukses. Lanjut bentuk kunci ${chordOrder[currentChordIndex]}!`);
             document.getElementById('target-chord').innerText = chordOrder[currentChordIndex];
             document.querySelectorAll('.note').forEach(n => n.classList.remove('selected'));
             userSelection = [];
         } else {
-            alert("🎉 Hebat! Semua kunci gitar beres. Sekarang masuk ke puzzle kedua!");
+            alert("🎉 Hebat, Semua kunci gitar beres. Sekarang masuk ke puzzle kedua");
             nextStep(2);
             initScratch();
         }
     } else {
-        alert(`❌ Bentuk jari untuk kunci ${targetChord} belum pas, coba periksa letak senar dan fretnya lagi!`);
+        alert(`❌ Bentuk jari untuk kunci ${targetChord} belum pas, coba periksa letak senar dan fretnya lagi`);
     }
 });
 
@@ -80,7 +80,7 @@ function initScratch() {
     ctx.fillStyle = '#546e7a';
     ctx.font = 'bold 15px Quicksand';
     ctx.textAlign = 'center';
-    ctx.fillText('Gosok layar pakai jemari di sini ✨', canvas.width/2, canvas.height/2);
+    ctx.fillText('Gosok layar pakai jari di sini', canvas.width/2, canvas.height/2);
 
     let isDrawing = false;
     let totalScratched = 0;
