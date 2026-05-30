@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Spesial Untukmu </title>
+    <title>Spesial Untuk Styvani </title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght=500;700&family=Caveat:wght=700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="canvas">
-        <div id="step1" class="card active">
+        <div id="step0" class="card active">
+            <div class="icon-header">👋✨</div>
+            <h2 class="welcome-title">Halo Styvani</h2>
+            <p class="welcome-text">Abang mau minta maaf sama mu. <br>Tapi sebelum itu abang punya sesuatu buat kamu, diselesaikan ya puzzle-nya</p>
+            <button class="btn btn-start" onclick="nextStep(1)">Mulai ✨</button>
+        </div>
+
+        <div id="step1" class="card">
             <div class="icon-header">🎵</div>
             <h2>Melody Puzzle</h2>
             <p>Klik fretboard di bawah untuk membentuk kunci: <br><span class="chord-highlight" id="target-chord">C</span></p>
@@ -58,10 +65,9 @@
             <div class="icon-header">✉️</div>
             <h2>Surat Kecil</h2>
             <div class="letter-box">
-                
-                <p>Van, abang mau minta maaf soal yang kemaren itu, abang tau itu salah abang dan gak seharusnya abang kekgitu, abang sebenarnya senang bisa chatan samamu, 
-                abang pengen minta maaf sama mu biar karna salah abang, abang pengen kita masih chatan lagi, abang pengen kejadian kek kemaren itu di lupain, 
-                abang janji gak ngulangi lagi, abang pengen kita kaya biasa lagi</p>
+                <p>Halo Styvani, abang mau minta maaf soal kejadian kemarin. Abang tahu abang salah dan gak bermaksud kekgitu.
+                abang pengen minta maaf serius sama kau, supaya kita bisa kayak biasa lagi, abang masih pengen cerita sama dengar cerita mu,
+                kau jadi yang hibur abang sehari hari jadi gak sepi, abang nyesal buat kekgitu, maaf ya</p>
                 </div>
             <button class="btn" onclick="nextStep(4)">Buka Pertanyaan</button>
         </div>
@@ -69,7 +75,7 @@
         <div id="step4" class="card final-card">
             <div class="icon-header">🥺</div>
             <h2>Satu Pertanyaan</h2>
-            <p class="question-text">Kamu mau maafin abang atau tidak?</p>
+            <p class="question-text">Kau mau maafin abang atau tidak?</p>
             <div class="btn-group">
                 <button id="btn-mau" class="btn btn-yes" onclick="kirimWA()">Mau</button>
                 <button id="btn-tidak" class="btn btn-no">Tidak</button>
