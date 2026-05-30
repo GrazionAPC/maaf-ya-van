@@ -2,7 +2,7 @@
 // PENGATURAN NOMOR HP KAMU 
 // (Ganti angka di bawah sesuai nomor WA kamu. Wajib awali dengan 62)
 // ==========================================
-const NOMOR_WA = "6281234567890"; 
+const NOMOR_WA = "628116502810"; 
 
 
 // --- LOGIKA PUZZLE 1: GUITAR FRETBOARD ---
