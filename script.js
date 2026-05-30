@@ -50,75 +50,42 @@ document.getElementById('btn-check-chord').addEventListener('click', () => {
             document.querySelectorAll('.note').forEach(n => n.classList.remove('selected'));
             userSelection = [];
         } else {
-            alert(" Hebat, Semua kunci gitar beres. Sekarang masuk ke puzzle kedua");
+            alert("🎉 Hebat, Semua kunci gitar beres. Sekarang masuk ke puzzle kedua");
             nextStep(2);
         }
     } else {
-        alert(` Bentuk jari untuk kunci ${targetChord} belum pas, coba periksa letak senar dan fretnya lagi`);
+        alert(`❌ Bentuk jari untuk kunci ${targetChord} belum pas, coba periksa letak senar dan fretnya lagi`);
     }
 });
 
 
-// --- LOGIKA PUZZLE 2: GOSOK KERTAS LUKIS (SCRATCH EFFECT) ---
-function initScratch() {
-    const canvas = document.getElementById('scratchCanvas');
-    const ctx = canvas.getContext('2d');
-    const container = document.querySelector('.scratch-container');
-    
-    canvas.width = container.offsetWidth;
-    canvas.height = container.offsetHeight;
-    
-    ctx.fillStyle = '#cfd8dc';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    ctx.fillStyle = '#546e7a';
-    ctx.font = 'bold 15px Quicksand';
-    ctx.textAlign = 'center';
-    ctx.fillText('Gosok layar pakai jari di sini ', canvas.width/2, canvas.height/2);
+// --- LOGIKA PUZZLE 2: KETUK UNTUK MEMBUKA FOTO (SUDAH DIPERBARUI) ---
+let clickCount = 0;
+function revealPhoto() {
+    const overlay = document.getElementById('scratchOverlay');
+    clickCount++;
 
-    let isDrawing = false;
-    let totalScratched = 0;
-
-    function scratch(e) {
-        if (!isDrawing) return;
-        const rect = canvas.getBoundingClientRect();
-        
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-        
-        const x = clientX - rect.left;
-        const y = clientY - rect.top;
-        
-        ctx.globalCompositeOperation = 'destination-out';
-        ctx.beginPath();
-        ctx.arc(x, y, 28);
-        ctx.fill();
-        
-        totalScratched++;
-        if (totalScratched > 120) { 
-            document.getElementById('btn-next-sketch').classList.remove('hidden');
-        }
+    if (clickCount === 1) {
+        overlay.style.backgroundColor = "rgba(207, 216, 220, 0.7)";
+        overlay.innerText = "Ketuk lagi... 👁";
+    } else if (clickCount === 2) {
+        overlay.style.backgroundColor = "rgba(207, 216, 220, 0.4)";
+        overlay.innerText = "Sedikit lagi... ";
+    } else if (clickCount >= 3) {
+        overlay.style.opacity = "0";
+        setTimeout(() => {
+            overlay.style.display = "none";
+        }, 300);
+        // Memunculkan tombol lanjut
+        document.getElementById('btn-next-sketch').classList.remove('hidden');
     }
-
-    canvas.addEventListener('mousedown', () => isDrawing = true);
-    canvas.addEventListener('mouseup', () => isDrawing = false);
-    canvas.addEventListener('mousemove', scratch);
-    
-    canvas.addEventListener('touchstart', () => isDrawing = true);
-    canvas.addEventListener('touchend', () => isDrawing = false);
-    canvas.addEventListener('touchmove', scratch);
 }
 
 
 // --- NAVIGASI ANTAR KARTU ---
 function nextStep(stepNumber) {
     document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
-    document.getElementById(`step${stepNumber}`).classList.add('active');
-    
-    // Jika pindah ke step 2, jalankan fungsi scratch
-    if (stepNumber === 2) {
-        initScratch();
-    }
+    document.getElementById(`step${stepNumber}`).add ? document.getElementById(`step${stepNumber}`).classList.add('active') : document.getElementById(`step${stepNumber}`).classList.add('active');
 }
 
 
