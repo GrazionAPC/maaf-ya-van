@@ -11,9 +11,9 @@
 
     <div class="canvas">
         <div id="step0" class="card active">
-            <div class="icon-header">👋✨</div>
-            <h2 class="welcome-title">Halo Styvani</h2>
-            <p class="welcome-text">Abang mau minta maaf sama mu. <br>Tapi sebelum itu abang punya sesuatu buat kamu, diselesaikan ya puzzle-nya</p>
+            <div class="icon-header">👋</div>
+            <h2 class="welcome-title">Halo Styvani...</h2>
+            <p class="welcome-text">Abang mau minta maaf ya. <br>Tapi sebelumnya abang punya sesuatu buat kamu, diselesaikan ya puzzle-nya</p>
             <button class="btn btn-start" onclick="nextStep(1)">Mulai ✨</button>
         </div>
 
@@ -54,11 +54,11 @@
         <div id="step2" class="card">
             <div class="icon-header">🎨</div>
             <h2>Sketch Puzzle</h2>
-            <p>Usap atau gosok layar di bawah ini untuk membuka gambar</p>
-            <div class="scratch-container">
-                <canvas id="scratchCanvas"></canvas>
+            <p>Ketuk/klik kotak di bawah beberapa kali untuk memunculkan gambar kenangan kita...</p>
+            <div class="scratch-container" id="photoContainer" onclick="revealPhoto()">
+                <div id="scratchOverlay">Ketuk di sini </div>
             </div>
-            <button id="btn-next-sketch" class="btn hidden" onclick="nextStep(3)">Lanjut ✨</button>
+            <button id="btn-next-sketch" class="btn hidden" onclick="nextStep(3)">Lanjut </button>
         </div>
 
         <div id="step3" class="card">
@@ -68,14 +68,14 @@
                 <p>Halo Styvani, abang mau minta maaf soal kejadian kemarin. Abang tahu abang salah dan gak bermaksud kekgitu.
                 abang pengen minta maaf serius sama kau, supaya kita bisa kayak biasa lagi, abang masih pengen cerita sama dengar cerita mu,
                 kau jadi yang hibur abang sehari hari jadi gak sepi, abang nyesal buat kekgitu, maaf ya</p>
-                </div>
+            </div>
             <button class="btn" onclick="nextStep(4)">Buka Pertanyaan</button>
         </div>
 
         <div id="step4" class="card final-card">
             <div class="icon-header">🥺</div>
             <h2>Satu Pertanyaan</h2>
-            <p class="question-text">Kau mau maafin abang atau tidak?</p>
+            <p class="question-text">Kamu mau maafin abang atau tidak?</p>
             <div class="btn-group">
                 <button id="btn-mau" class="btn btn-yes" onclick="kirimWA()">Mau</button>
                 <button id="btn-tidak" class="btn btn-no">Tidak</button>
