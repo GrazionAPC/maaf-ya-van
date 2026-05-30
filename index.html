@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Spesial Untukmu ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="canvas">
+        <div id="step1" class="card active">
+            <div class="icon-header">🎵</div>
+            <h2>Melody Puzzle</h2>
+            <p>Klik fretboard di bawah untuk membentuk kunci: <br><span class="chord-highlight" id="target-chord">C</span></p>
+            
+            <div class="fretboard-container">
+                <div class="fret-labels">
+                    <span>Nut</span><span>Fret 1</span><span>Fret 2</span><span>Fret 3</span>
+                </div>
+                <div class="fretboard">
+                    <div class="string" data-string="1">
+                        <div class="note" data-fret="0">E</div><div class="note" data-fret="1">F</div><div class="note" data-fret="2">F#</div><div class="note" data-fret="3">G</div>
+                    </div>
+                    <div class="string" data-string="2">
+                        <div class="note" data-fret="0">B</div><div class="note" data-fret="1">C</div><div class="note" data-fret="2">C#</div><div class="note" data-fret="3">D</div>
+                    </div>
+                    <div class="string" data-string="3">
+                        <div class="note" data-fret="0">G</div><div class="note" data-fret="1">G#</div><div class="note" data-fret="2">A</div><div class="note" data-fret="3">A#</div>
+                    </div>
+                    <div class="string" data-string="4">
+                        <div class="note" data-fret="0">D</div><div class="note" data-fret="1">D#</div><div class="note" data-fret="2">E</div><div class="note" data-fret="3">F</div>
+                    </div>
+                    <div class="string" data-string="5">
+                        <div class="note" data-fret="0">A</div><div class="note" data-fret="1">A#</div><div class="note" data-fret="2">B</div><div class="note" data-fret="3">C</div>
+                    </div>
+                    <div class="string" data-string="6">
+                        <div class="note" data-fret="0">E</div><div class="note" data-fret="1">F</div><div class="note" data-fret="2">F#</div><div class="note" data-fret="3">G</div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="btn-check-chord" class="btn">Tekan Kunci!</button>
+        </div>
+
+        <div id="step2" class="card">
+            <div class="icon-header">🎨</div>
+            <h2>Sketch Puzzle</h2>
+            <p>Usap atau gosok layar di bawah ini untuk membuka kenangan kita...</p>
+            <div class="scratch-container">
+                <canvas id="scratchCanvas"></canvas>
+            </div>
+            <button id="btn-next-sketch" class="btn hidden" onclick="nextStep(3)">Lanjut ✨</button>
+        </div>
+
+        <div id="step3" class="card">
+            <div class="icon-header">✉️</div>
+            <h2>Surat Kecil</h2>
+            <div class="letter-box">
+                <p>Halo..., abang mau minta maaf ya atas kejadian kemarin. Abang tahu abang salah dan gak bermaksud bikin kamu kesel sama sekali. Semoga kamu mau dengerin penjelasan abang dan kita bisa baikan lagi seperti biasa ya... 🙏</p>
+            </div>
+            <button class="btn" onclick="nextStep(4)">Buka Pertanyaan</button>
+        </div>
+
+        <div id="step4" class="card final-card">
+            <div class="icon-header">🥺</div>
+            <h2>Satu Pertanyaan</h2>
+            <p class="question-text">Kamu mau maafin abang atau tidak?</p>
+            <div class="btn-group">
+                <button id="btn-mau" class="btn btn-yes" onclick="kirimWA()">Mau</button>
+                <button id="btn-tidak" class="btn btn-no">Tidak</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
