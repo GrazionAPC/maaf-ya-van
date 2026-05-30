@@ -56,8 +56,8 @@ body {
 }
 
 .icon-header {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
+    font-size: 3rem;
+    margin-bottom: 12px;
 }
 
 h2 {
@@ -67,11 +67,22 @@ h2 {
     margin-bottom: 8px;
 }
 
+.welcome-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+
 p {
     color: #5c5c5c;
     font-size: 0.95rem;
-    line-height: 1.4;
+    line-height: 1.5;
     margin-bottom: 20px;
+}
+
+.welcome-text {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+    font-weight: 500;
 }
 
 .chord-highlight {
@@ -170,7 +181,7 @@ p {
     top: 0;
     left: 0;
     cursor: crosshair;
-    touch-action: none; /* Mencegah layar HP ikut ter-scroll saat menggosok */
+    touch-action: none;
 }
 
 /* Kotak Surat Estetik */
@@ -212,8 +223,15 @@ p {
     box-shadow: 0 8px 25px rgba(255, 92, 122, 0.5);
 }
 
-.btn:active {
-    transform: translateY(0);
+.btn-start {
+    background: linear-gradient(135deg, #6c5ce7, #a8a5e6);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.4);
+    padding: 15px 50px;
+    font-size: 1.1rem;
+}
+
+.btn-start:hover {
+    box-shadow: 0 8px 25px rgba(108, 92, 231, 0.5);
 }
 
 .btn-group {
